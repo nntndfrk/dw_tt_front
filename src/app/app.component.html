@@ -1,19 +1,52 @@
-<div class="row" *ngIf="cityList">
+<header class="header-2">
+  <div class="branding">
+    <a href="#" class="nav-link">
+      <clr-icon shape="clock" class="is-solid"></clr-icon>
+      <span class="title">My Test Task</span>
+    </a>
+  </div>
+  <div class="header-actions">
+    <clr-dropdown>
+      <button class="nav-text" clrDropdownTrigger>
+        nntndfrk@gmail.com
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+        <a href="https://github.com/nntndfrk" target="_blank" clrDropdownItem>Github</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+  </div>
+</header>
+
+
+<div class="row">
+  <app-custom-timezone></app-custom-timezone>
+</div>
+
+<div class="row" *ngIf="cityList;else unset">
   <div
     class="col-lg-3 col-md-4 col-sm-6 col-xs-12"
     *ngFor="let city of cityList">
     <div class="card">
       <div class="card-header">
+        <clr-icon shape="map-marker" class="is-solid"></clr-icon>
         {{city.name}}
       </div>
       <div class="card-block">
         <div class="card-title">
 
         </div>
-        <div class="card-text">
+        <div class="card-imgt">
           <app-clock2 [tz]="city.tz"></app-clock2>
         </div>
       </div>
     </div>
   </div>
 </div>
+<ng-template #unset>
+  <div class="spinner-wrapper">
+    <span class="spinner spinner-sm">
+      Loading...
+    </span>
+  </div>
+</ng-template>

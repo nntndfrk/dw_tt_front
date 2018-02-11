@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 
-import {HttpService} from './http.service';
+import {AppService} from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import {HttpService} from './http.service';
 export class AppComponent implements OnInit {
   cityList: Array<any>;
 
-  constructor(private appService: HttpService) {
+  constructor(private appService: AppService) {
   }
 
   ngOnInit() {

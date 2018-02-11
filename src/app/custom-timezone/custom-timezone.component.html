@@ -1,0 +1,11 @@
+<form>
+  <section class="form-block">
+    <label>Додати часовий пояс</label>
+    <div class="form-group">
+      <label for="tz">Часовий пояс</label>
+      <br>
+      <input type="number" step="1" min="-12" max="12" id="tz" name="tz" [(ngModel)]="tz">
+      <button class="btn btn-outline" (click)="addTimeZone()" style="color: #485969">Додати</button>
+    </div>
+  </section>
+</form>
