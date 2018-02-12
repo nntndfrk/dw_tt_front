@@ -14,10 +14,14 @@ export class AppComponent implements OnInit {
   constructor(private appService: AppService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.appService.getCityList()
       .subscribe(data => {
         this.cityList = data;
       });
+  }
+
+  deleteTz(city): void {
+    this.appService.deleteTimeZone(city.tz);
   }
 }

@@ -23,7 +23,7 @@ export class Clock2Component implements OnInit {
   }
 
   ngOnInit() {
-    this.momentDate = moment().clone().tz(this.tz).format('YYYY-MM-DD HH:mm');
+    this.momentDate = moment().tz(this.tz).format('YYYY-MM-DD HH:mm');
     this.date = new Date(this.momentDate);
     this.minutes = this.date.getMinutes();
     this.hours = this.date.getHours();
