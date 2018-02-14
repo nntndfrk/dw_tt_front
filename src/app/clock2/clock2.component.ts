@@ -32,5 +32,4 @@ export class Clock2Component implements OnInit {
     this.hoursAngleStyle = this._sanitizer.bypassSecurityTrustStyle(`rotateZ(${this.hoursAngle}deg)`);
     this.minutesAngleStyle = this._sanitizer.bypassSecurityTrustStyle(`rotateZ(${this.minutesAngle}deg)`);
   }
-
 }
